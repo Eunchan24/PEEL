@@ -62,18 +62,6 @@ peel/
 └── evaluate.py         Evaluation (5 OLLM metrics)
 ```
 
-## Hyperparameters
-
-| Parameter | wiki-ol | arXiv-ol |
-|-----------|---------|----------|
-| Probe     | 768→128, ReLU | same (zero-shot) |
-| Margin    | 4.0     | —        |
-| LR        | 5e-4    | —        |
-| Epochs    | 10      | —        |
-| Infer dim | 512     | 768      |
-| CLE k     | 10      | 20       |
-| n_expand  | 15,000  | tree only |
-
 ## Reproducibility
 
 All hyperparameters were tuned on a 10% validation split of wiki-ol training edges, never on the test set. PEEL follows the OLLM evaluation protocol (Lo et al., 2024) exactly: identical concept vocabulary, train/test splits, and five metrics. The probe is deterministic given seed=42; training takes ~4 seconds on a single GPU.
